@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #1e1e1e;
+  --text-color: #f9f9f9;
+  --accent-color: #5225a5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@theme inline {
+  --color-bg: var(--bg-color);
+  --color-text: var(--text-color);
+  --color-accent: var(--accent-color);
+}
