@@ -1,12 +1,17 @@
 import { app, shell, BrowserWindow } from "electron";
 import path, { join } from "path";
 import { electronApp, optimizer, is } from "@electron-toolkit/utils";
+import TypeScriptParser from "../libs/typescriptParser";
 
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    minWidth: 1000,
+    minHeight: 600,
+    maxHeight: 1080,
+    maxWidth: 1920,
+    width: 1000,
+    height: 600,
     show: false,
     autoHideMenuBar: true,
     icon: path.join(__dirname, "../../resources/icon.png"),
@@ -50,6 +55,18 @@ app.whenReady().then(() => {
   });
 
   createWindow();
+
+  TypeScriptParser.getInstance().initParser();
+  setTimeout(() => {
+    TypeScriptParser.getInstance()
+      .parseCode("\nfunction test() {\n  for (let i = 0; i < n; i++) {}\n}")
+      .then((tree) => {
+        console.log("Parsed TypeScript code:", tree.rootNode.toString());
+      })
+      .catch((error) => {
+        console.error("Error parsing TypeScript code:", error);
+      });
+  }, 1000);
 
   app.on("activate", function () {
     // On macOS it's common to re-create a window in the app when the

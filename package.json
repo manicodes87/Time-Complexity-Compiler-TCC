@@ -26,7 +26,10 @@
     "@electron-toolkit/utils": "^4.0.0",
     "@tailwindcss/vite": "^4.2.4",
     "codemirror": "^6.0.2",
-    "tailwindcss": "^4.2.4"
+    "motion": "^12.38.0",
+    "tailwindcss": "^4.2.4",
+    "tree-sitter-typescript": "^0.23.2",
+    "web-tree-sitter": "^0.26.8"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",
