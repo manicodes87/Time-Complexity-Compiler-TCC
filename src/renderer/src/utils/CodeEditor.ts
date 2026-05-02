@@ -17,11 +17,9 @@ export const modernColorSyntax = HighlightStyle.define([
 
 export const modernBWTheme = EditorView.theme({
   "&": {
-    border: "2px solid #f9f9f9",
     backgroundColor: "#0f0f10",
     color: "#e8e8e8",
     height: "100%",
-    borderRadius: "12px 0 0 12px",
     overflow: "hidden",
   },
 
@@ -33,7 +31,6 @@ export const modernBWTheme = EditorView.theme({
 
   ".cm-scroller": {
     overflow: "auto",
-    borderRadius: "12px 0 0 12px",
   },
 
   ".cm-cursor": {
